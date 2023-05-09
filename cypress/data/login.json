@@ -7,13 +7,13 @@
   "phone_number_textbox_label_id": "#phone-label",
   "phone_number_textbox_legend_class": "css-14lo706",
   "phone_number_textbox_id": "#phone",
-  "phone_number_required_message_class": "p[style=color: rgb(176, 0, 32); font-size: 0.9rem;]",
+  "phone_number_required_message_xpath": "//p[normalize-space()='Phone number is required']",
 
 
   "password_textbox_label_id": "#password-label",
   "password_textbox_id": "#password",
   "password_hide_button_id": ".MuiSvgIcon-root",
-  "password_required_message_class": "body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > section:nth-child(1) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > p:nth-child(2)",
+  "password_required_message_xpath": "//p[normalize-space()='Required']",
 
   "forget_password_attr": "a[href='/auth/forget-password']",
 

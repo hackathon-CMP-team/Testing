@@ -1,4 +1,7 @@
 import Login from '../support/login'
+import TEST_DATA from '../data/test_data.json'
+import HOST from '../data/host.json'
+import LOGIN_DATA from '../data/login.json'
 
 describe('Login Page UI/UX and Functionality Test', () => {
   const loginPage = new Login();
@@ -49,26 +52,37 @@ describe('Login Page UI/UX and Functionality Test', () => {
   });
 
   it('Test the frontend validation on the phone', () => {
-    loginPage.login(null, '123456');
+    loginPage.get_password_textbox().type('123456');
+    loginPage.click_on_login_button();
     loginPage.get_phone_number_required_message().should('exist');
-    // loginPage.get_password_required_message().should('not.exist');
+    loginPage.get_password_required_message().should('not.exist');
 
-    loginPage.login('123456', '01098473674');
+    loginPage.get_phone_number_textbox().type('01098473674');
+    loginPage.get_password_textbox().type('123456');
+    loginPage.click_on_login_button();
     loginPage.get_phone_number_required_message().should('not.exist');
-    // loginPage.get_password_required_message().should('not.exist');
-  });
-
-  it('Test the frontend validation on the password', () => {
-    loginPage.login('01098473674', null);
-    // loginPage.get_phone_number_required_message().should('not.exist');
-    loginPage.get_password_required_message().should('exist');
-
-    loginPage.login('01098473674', '123456');
-    // loginPage.get_phone_number_required_message().should('not.exist');
     loginPage.get_password_required_message().should('not.exist');
   });
 
-  // it('Test the redirection is right after login', )
+  it('Test the frontend validation on the password', () => {
+    loginPage.get_phone_number_textbox().type('01098473674');
+    loginPage.click_on_login_button();
+    loginPage.get_password_required_message().should('exist');
+    loginPage.get_phone_number_required_message().should('not.exist');
+
+    loginPage.get_phone_number_textbox().type('01098473674');
+    loginPage.get_password_textbox().type('123456');
+    loginPage.click_on_login_button();
+    loginPage.get_phone_number_required_message().should('not.exist');
+    loginPage.get_password_required_message().should('not.exist');
+  });
+
+  it('Test the redirection is right after login', () => {
+    loginPage.get_phone_number_textbox().type(TEST_DATA.account_1.phone_number);
+    loginPage.get_password_textbox().type(TEST_DATA.account_1.password);
+    loginPage.click_on_login_button();
+    cy.url().should('eq', HOST.host_name + LOGIN_DATA.AfterLoginURL);
+  });
 
   it('Test the validations by frontend', () => {
     loginPage.get_phone_number_required_message().should('not.exist');

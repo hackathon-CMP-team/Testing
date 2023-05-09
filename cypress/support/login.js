@@ -18,7 +18,7 @@ class Login {
   }
 
   get_phone_number_required_message() {
-    return cy.get(LOGIN_DATA.phone_number_required_message_class);
+    return cy.xpath(LOGIN_DATA.phone_number_required_message_xpath);
   }
 
   get_password_textbox() {
@@ -30,7 +30,7 @@ class Login {
   }
 
   get_password_required_message() {
-    return cy.get(LOGIN_DATA.password_required_message_class);
+    return cy.xpath(LOGIN_DATA.password_required_message_xpath);
   }
   
   get_forget_password_ref() {
