@@ -1,0 +1,9 @@
+*Important*
+-----------
+
+
+*Regular*
+---------
+1. phone as legend in the phone textbox
+2. password as legend in the password textbox
+5. When enter password digit by digit, you shouldn't be able to enter more than 6 digits and whatever you enter, it will not be written.

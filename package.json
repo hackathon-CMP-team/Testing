@@ -1,0 +1,11 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "This is the automated e2e test for the website if E-Wallet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmed Alaa",
+  "license": "ISC"
+}
