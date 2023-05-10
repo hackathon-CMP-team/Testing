@@ -1,0 +1,20 @@
+{
+  "URL": "/",
+
+  "header_xpath": "",
+
+  "home_tap_xpath": "",
+  "services_tap_xpath": "",
+  "management_tap_xpath": "",
+  "help_center_tap_xpath": "",
+  "transfer_tap_xpath": "",
+  "payments_tap_xpath": "",
+  "with_draw_tap_xpath": "",
+  "help_tap_xpath": "",
+  "virtual_card_tap_xpath": "",
+  "total_balance_container_xpath": "",
+  "income_container_xpath": "",
+  "outcome_xpath": "",
+  "notification_icon_xpath": "",
+  "profile_icon_xpath": ""
+  }
