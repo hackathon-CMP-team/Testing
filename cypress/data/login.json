@@ -1,19 +1,20 @@
 {
   "URL": "/auth/login",
   "AfterLoginURL": "/",
+  "AfterForgetPassword": "/auth/forget-password",
 
   "header_class": ".AuthPage_logo-box__x0lOe",
 
   "phone_number_textbox_label_id": "#phone-label",
-  "phone_number_textbox_legend_class": "css-14lo706",
   "phone_number_textbox_id": "#phone",
   "phone_number_required_message_xpath": "//p[normalize-space()='Phone number is required']",
-
+  "phone_number_is_not_valid_message_xpath": "//p[normalize-space()='Please enter a valid Egyptian phone number']",
 
   "password_textbox_label_id": "#password-label",
   "password_textbox_id": "#password",
   "password_hide_button_id": ".MuiSvgIcon-root",
   "password_required_message_xpath": "//p[normalize-space()='Required']",
+  "password_is_not_valid_message_xpath": "NOT EXISTED",
 
   "forget_password_attr": "a[href='/auth/forget-password']",
 

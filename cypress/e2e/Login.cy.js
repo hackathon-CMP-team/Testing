@@ -51,6 +51,30 @@ describe('Login Page UI/UX and Functionality Test', () => {
     });
   });
 
+  it('Test that the phone number textbox is clickable', () => {
+    loginPage.get_phone_number_textbox().should('be.enabled');
+  });
+
+  it('Test that the password textbox is clickable', () => {
+    loginPage.get_password_textbox().should('be.enabled');
+  });
+
+  it('Test that the password hide/unhide button is clickable', () => {
+    loginPage.get_password_hide_button().should('have.prop', 'onclick')
+  });
+
+  it('Test that the forget password link is clickable', () => {
+    loginPage.get_forget_password_ref().should('have.attr', 'href');
+  });
+
+  it('Test that the login button is clickable', () => {
+    loginPage.get_login_button().should('be.enabled');
+  });
+
+  it('Test that the register button is clickable', () => {
+    loginPage.get_register_button().should('be.enabled');
+  });
+
   it('Test the frontend validation on the phone', () => {
     loginPage.get_password_textbox().type('123456');
     loginPage.click_on_login_button();
@@ -58,7 +82,6 @@ describe('Login Page UI/UX and Functionality Test', () => {
     loginPage.get_password_required_message().should('not.exist');
 
     loginPage.get_phone_number_textbox().type('01098473674');
-    loginPage.get_password_textbox().type('123456');
     loginPage.click_on_login_button();
     loginPage.get_phone_number_required_message().should('not.exist');
     loginPage.get_password_required_message().should('not.exist');
@@ -70,7 +93,6 @@ describe('Login Page UI/UX and Functionality Test', () => {
     loginPage.get_password_required_message().should('exist');
     loginPage.get_phone_number_required_message().should('not.exist');
 
-    loginPage.get_phone_number_textbox().type('01098473674');
     loginPage.get_password_textbox().type('123456');
     loginPage.click_on_login_button();
     loginPage.get_phone_number_required_message().should('not.exist');
@@ -115,5 +137,33 @@ describe('Login Page UI/UX and Functionality Test', () => {
     loginPage.get_phone_number_textbox().type('01023456789');
     loginPage.get_password_textbox().type('123456');
     loginPage.click_on_login_button();
+  });
+  
+  it('Test forget password functionality', () => {
+    loginPage.click_on_forget_password_ref();
+    cy.url().should('eq', HOST.host_name + LOGIN_DATA.AfterForgetPassword);
+  });
+
+  it('Test phone number is not valid', () => {
+    loginPage.get_phone_number_textbox().type("01928202598");
+    loginPage.click_on_header();
+
+    loginPage.get_phone_number_is_not_valid_message().should('exist');
+  });
+
+  it('Test password doesn\'t accept more than 6 digits', () => {
+    loginPage.get_phone_number_textbox().type('01023456789');
+    loginPage.get_password_textbox().type('123456789');
+
+    loginPage.click_on_login_button();
+    loginPage.get_password_is_not_valid_message().should('exist');
+  });
+
+  it('Test password doesn\'t accept anything except integer digits', () => {
+    loginPage.get_phone_number_textbox().type('01023456789');
+    loginPage.get_password_textbox().type('ahmed7');
+
+    loginPage.click_on_login_button();
+    loginPage.get_password_is_not_valid_message().should('exist');
   });
 });

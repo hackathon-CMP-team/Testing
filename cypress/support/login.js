@@ -21,6 +21,10 @@ class Login {
     return cy.xpath(LOGIN_DATA.phone_number_required_message_xpath);
   }
 
+  get_phone_number_is_not_valid_message() {
+    return cy.xpath(LOGIN_DATA.phone_number_is_not_valid_message_xpath);
+  }
+
   get_password_textbox() {
     return cy.get(LOGIN_DATA.password_textbox_id);
   }
@@ -43,6 +47,10 @@ class Login {
   
   get_register_button() {
     return cy.get(LOGIN_DATA.register_button_attr);
+  }
+
+  get_password_is_not_valid_message() {
+    return cy.get(LOGIN_DATA.password_is_not_valid_message_xpath)
   }
 
   /* <===================================== Label getters for all the elements =====================================> */
