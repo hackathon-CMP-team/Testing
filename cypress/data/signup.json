@@ -1,0 +1,25 @@
+{
+  "URL": "auth/signup",
+  "AfterLoginURL": "/",
+
+  "header_xpath": "//h1[normalize-space()='Tap Cash']",
+
+  "parent_and_children_avatar_xpath": "//div[@class='MuiAvatar-root MuiAvatar-circular css-p14nah-MuiAvatar-root']//img[@class='MuiAvatar-img css-1pqm26d-MuiAvatar-img']",
+  
+  "first_name_textbox_xpath": "//input[@id='firstName']",
+  "last_name_textbox_xpath": "//input[@id='lastName']",
+  "phone_number_textbox_xpath": "//input[@id='phone']",
+  "parent_phone_number_textbox_xpath": "//input[@id='parentPhone']",
+  "email_textbox_xpath": "//input[@id='email']",
+  
+  "birthdate_textbox_xpath": "//input[@id='birthDate']",
+
+  "password_textbox_xpath": "//input[@id='password']",
+  "password_hide_button_xpath": "//*[name()='path' and contains(@d,'M12 4.5C7 ')]",
+
+  "confirm_password_textbox_xpath": "//input[@id='confPassword']",
+  "confirm_password_hide_button_xpath": "//input[@id='confPassword']",
+
+  "already_have_an_email_xpath": "//a[normalize-space()='Already have an email ?']",
+  "register_button_xpath": "//button[@type='submit']"
+}
